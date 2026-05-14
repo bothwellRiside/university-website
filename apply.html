@@ -278,12 +278,13 @@
     }
 
     .form-frame {
-      width: 100%;
-      min-height: 1100px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--soft);
-    }
+  width: 100%;
+  min-height: 620px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: white;
+}
+
 
     .form-note {
       margin-bottom: 20px;
@@ -406,7 +407,7 @@
       }
 
       .form-frame {
-        min-height: 1250px;
+         min-height: 700px;
       }
     }
   </style>
@@ -498,22 +499,28 @@
         </div>
 
         <div class="form-panel">
-          <div class="section-label">Application Form</div>
-          <h2>Submit your enquiry</h2>
-          <p class="form-note">
-            Replace the placeholder below with your Google Form embed link. If the form does not load,
-            students can also use the direct application link.
-          </p>
+  <div class="section-label">Application Form</div>
+  <h2>Submit your enquiry</h2>
+  <p class="form-note">
+    Complete the enquiry form below. Our admissions team will contact you with
+    programme details, entry requirements, fees, scholarships, and next steps.
+  </p>
 
-          <a href="https://script.google.com/a/macros/kyleprep.ac.zw/s/AKfycby9eeVjsJTgmQCSa5dwEMi3ZblV8Up6qubFgY9_MQ2Xx3ESrPwhIUaG2tiBq0UIpmwzVA/exec" target="_blank" class="fallback-link">
-  Open application form in a new tab
-</a>
+  <iframe
+    class="form-frame"
+    src="https://script.google.com/a/macros/kyleprep.ac.zw/s/AKfycby9eeVjsJTgmQCSa5dwEMi3ZblV8Up6qubFgY9_MQ2Xx3ESrPwhIUaG2tiBq0UIpmwzVA/exec"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    loading="lazy">
+    Loading…
+  </iframe>
 
+  <a href="https://script.google.com/a/macros/kyleprep.ac.zw/s/AKfycby9eeVjsJTgmQCSa5dwEMi3ZblV8Up6qubFgY9_MQ2Xx3ESrPwhIUaG2tiBq0UIpmwzVA/exec" target="_blank" class="fallback-link">
+    Open application form in a new tab
+  </a>
+</div>
 
-          <a href="YOUR_GOOGLE_FORM_DIRECT_LINK_HERE" target="_blank" class="fallback-link">
-            Open application form in a new tab
-          </a>
-        </div>
       </div>
     </section>
 
