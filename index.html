@@ -131,7 +131,8 @@
       font-size: 15px;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: var(--red);
     }
 
@@ -187,7 +188,7 @@
       font-size: clamp(40px, 6vw, 70px);
       line-height: 1.05;
       margin-bottom: 22px;
-      letter-spacing: -1px;
+      letter-spacing: 0;
     }
 
     .hero p {
@@ -497,12 +498,11 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 32px;
     }
 
-    .contact-box,
-    form {
+    .contact-box {
       background: white;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -510,11 +510,15 @@
       box-shadow: 0 6px 20px rgba(7, 27, 58, 0.04);
     }
 
-    .contact-box h3,
-    form h3 {
+    .contact-box h3 {
       color: var(--navy);
       margin-bottom: 16px;
       font-size: 24px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 18px;
     }
 
     .contact-item {
@@ -525,44 +529,6 @@
     .contact-item strong {
       display: block;
       color: var(--navy);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    label {
-      display: block;
-      color: var(--navy);
-      font-weight: 700;
-      margin: 14px 0 6px;
-      font-size: 14px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 13px 14px;
-      font: inherit;
-      color: var(--ink);
-      background: white;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    button {
-      border: 0;
-      cursor: pointer;
-      margin-top: 18px;
-      font: inherit;
     }
 
     footer {
@@ -582,6 +548,10 @@
     footer h4 {
       color: white;
       margin-bottom: 12px;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.72);
     }
 
     footer a {
@@ -679,8 +649,7 @@
       .steps,
       .split,
       .contact-grid,
-      .footer-grid,
-      .form-row {
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
@@ -699,13 +668,13 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <span>Online learning for students worldwide</span>
-      <span>Admissions enquiries: admissions@ludl.ac.uk</span>
+      <span>Admissions enquiries: admissions@ludli.com</span>
     </div>
   </div>
 
   <header>
     <div class="container header-inner">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <div class="crest">LU</div>
         <div>
           <strong>Liverpool University of Distance Learning</strong>
@@ -714,11 +683,11 @@
       </a>
 
       <nav>
-        <a href="#about">About</a>
-        <a href="#programmes">Programmes</a>
-        <a href="#learning">Learning</a>
-        <a href="#admissions">Admissions</a>
-        <a href="#contact" class="nav-cta">Apply Now</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta">Apply Now</a>
       </nav>
     </div>
   </header>
@@ -734,8 +703,8 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#programmes" class="btn btn-primary">Explore Programmes</a>
-          <a href="#contact" class="btn btn-secondary">Request Information</a>
+          <a href="programmes.html" class="btn btn-primary">Explore Programmes</a>
+          <a href="contact.html" class="btn btn-secondary">Request Information</a>
         </div>
       </div>
     </section>
@@ -746,14 +715,17 @@
           <strong>100%</strong>
           <span>Online study options</span>
         </div>
+
         <div class="stat">
           <strong>24/7</strong>
           <span>Digital learning access</span>
         </div>
+
         <div class="stat">
           <strong>Global</strong>
           <span>Student community</span>
         </div>
+
         <div class="stat">
           <strong>Career</strong>
           <span>Focused curriculum</span>
@@ -761,7 +733,7 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about-preview">
       <div class="container split">
         <div>
           <div class="section-label">About The University</div>
@@ -796,52 +768,60 @@
               </div>
             </div>
           </div>
+
+          <div class="hero-actions" style="margin-top: 28px;">
+            <a href="about.html" class="btn btn-primary">Learn About Us</a>
+          </div>
         </div>
 
         <div class="image-panel" aria-label="Online university learning environment"></div>
       </div>
     </section>
 
-    <section id="programmes" class="section-soft">
+    <section id="programmes-preview" class="section-soft">
       <div class="container">
         <div class="section-heading center">
           <div class="section-label">Academic Programmes</div>
           <h2>Study areas designed for modern careers.</h2>
           <p>
-            Choose from flexible online pathways across business, technology, education,
-            health leadership, and social sciences.
+            Choose from flexible online pathways across Education, PGDCE programmes,
+            IT and Computing, Business, Social Sciences, Commercial Studies, and postgraduate learning.
           </p>
         </div>
 
         <div class="programmes">
           <div class="programme">
-            <small>Undergraduate</small>
-            <h3>Business & Management</h3>
-            <p>Leadership, enterprise, marketing, finance, and organisational strategy.</p>
+            <small>Education</small>
+            <h3>Education Degrees</h3>
+            <p>Education Studies, Early Childhood Education, Primary Education, and Inclusive Education.</p>
           </div>
 
           <div class="programme">
-            <small>Undergraduate</small>
-            <h3>Computing & Technology</h3>
-            <p>Computer science, information systems, data, and digital transformation.</p>
+            <small>Professional</small>
+            <h3>PGDCE Programmes</h3>
+            <p>Teaching and Learning, Educational Leadership, Curriculum, Special Needs, and Online Education.</p>
+          </div>
+
+          <div class="programme">
+            <small>Technology</small>
+            <h3>IT & Computing</h3>
+            <p>Computer Science, Information Technology, Software Engineering, Cybersecurity, Data Science, and AI.</p>
           </div>
 
           <div class="programme">
             <small>Postgraduate</small>
-            <h3>Education & Leadership</h3>
-            <p>Teaching practice, education policy, institutional leadership, and research.</p>
+            <h3>Master’s Degrees</h3>
+            <p>Advanced study in Education, Leadership, IT, Business Administration, and Social Sciences.</p>
           </div>
+        </div>
 
-          <div class="programme">
-            <small>Postgraduate</small>
-            <h3>Health & Social Care</h3>
-            <p>Healthcare management, public service, social care, and community impact.</p>
-          </div>
+        <div class="hero-actions" style="justify-content: center; margin-top: 34px;">
+          <a href="programmes.html" class="btn btn-primary">View All Programmes</a>
         </div>
       </div>
     </section>
 
-    <section id="learning">
+    <section id="learning-preview">
       <div class="container">
         <div class="section-heading center">
           <div class="section-label">Why Study With Us</div>
@@ -859,7 +839,7 @@
             <p>
               Access lectures, readings, tasks, and learning materials from wherever you are.
             </p>
-            <a href="#contact" class="card-link">Ask about study options</a>
+            <a href="contact.html" class="card-link">Ask about study options</a>
           </div>
 
           <div class="card">
@@ -868,7 +848,7 @@
             <p>
               Follow organised modules, assessment points, and practical learning outcomes.
             </p>
-            <a href="#programmes" class="card-link">View programme areas</a>
+            <a href="programmes.html" class="card-link">View programme areas</a>
           </div>
 
           <div class="card">
@@ -877,13 +857,13 @@
             <p>
               Learn knowledge and skills connected to leadership, technology, and professional growth.
             </p>
-            <a href="#admissions" class="card-link">Start your application</a>
+            <a href="contact.html" class="card-link">Start your application</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="admissions" class="admissions">
+    <section id="admissions-preview" class="admissions">
       <div class="container">
         <div class="section-heading">
           <div class="section-label">Admissions</div>
@@ -919,6 +899,10 @@
             <p>After acceptance, access your online learning environment and student support.</p>
           </div>
         </div>
+
+        <div class="hero-actions" style="margin-top: 34px;">
+          <a href="contact.html" class="btn btn-primary">Contact Admissions</a>
+        </div>
       </div>
     </section>
 
@@ -930,73 +914,40 @@
       </div>
     </div>
 
-    <section id="contact" class="section-soft">
+    <section class="section-soft">
       <div class="container contact-grid">
         <div class="contact-box">
-          <h3>Contact Admissions</h3>
+          <h3>Ready to begin?</h3>
+
+          <p>
+            Speak with our admissions office about online study routes, entry requirements,
+            tuition information, programme availability, and upcoming intake dates.
+          </p>
 
           <div class="contact-item">
             <strong>Email</strong>
-            admissions@ludl.ac.uk
+            admissions@ludli.com
           </div>
 
           <div class="contact-item">
             <strong>Location</strong>
             Liverpool, United Kingdom
           </div>
-
-          <div class="contact-item">
-            <strong>Office Hours</strong>
-            Monday to Friday, 09:00 - 17:00 UK time
-          </div>
-
-          <p>
-            Speak with our admissions office about online study routes, entry requirements,
-            tuition information, and upcoming intake dates.
-          </p>
         </div>
 
-        <form>
-          <h3>Request Information</h3>
+        <div class="contact-box">
+          <h3>Next steps</h3>
 
-          <div class="form-row">
-            <div>
-              <label for="name">Full Name</label>
-              <input id="name" type="text" placeholder="Your full name" />
-            </div>
+          <p>
+            Review the programme list, prepare your academic documents, and contact admissions
+            for guidance before submitting your enquiry.
+          </p>
 
-            <div>
-              <label for="email">Email Address</label>
-              <input id="email" type="email" placeholder="you@example.com" />
-            </div>
+          <div class="hero-actions" style="margin-top: 24px;">
+            <a href="programmes.html" class="btn btn-primary">Browse Programmes</a>
+            <a href="contact.html" class="btn btn-secondary" style="color: var(--navy); border-color: var(--line); background: white;">Request Information</a>
           </div>
-
-          <div class="form-row">
-            <div>
-              <label for="programme">Programme Interest</label>
-              <select id="programme">
-                <option>Business & Management</option>
-                <option>Computing & Technology</option>
-                <option>Education & Leadership</option>
-                <option>Health & Social Care</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="level">Study Level</label>
-              <select id="level">
-                <option>Undergraduate</option>
-                <option>Postgraduate</option>
-                <option>Professional Certificate</option>
-              </select>
-            </div>
-          </div>
-
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us what you would like to study."></textarea>
-
-          <button type="button" class="btn btn-primary">Submit Enquiry</button>
-        </form>
+        </div>
       </div>
     </section>
   </main>
@@ -1014,23 +965,24 @@
 
         <div>
           <h4>University</h4>
-          <a href="#about">About</a>
-          <a href="#learning">Online Learning</a>
-          <a href="#admissions">Admissions</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Admissions</a>
         </div>
 
         <div>
           <h4>Programmes</h4>
-          <a href="#programmes">Business</a>
-          <a href="#programmes">Computing</a>
-          <a href="#programmes">Education</a>
+          <a href="programmes.html">Education</a>
+          <a href="programmes.html">PGDCE</a>
+          <a href="programmes.html">IT & Computing</a>
+          <a href="programmes.html">Business</a>
         </div>
 
         <div>
-          <h4>Policies</h4>
+          <h4>Contact</h4>
+          <a href="contact.html">Request Information</a>
+          <a href="mailto:admissions@ludli.com">Admissions Email</a>
           <a href="#">Privacy Policy</a>
-          <a href="#">Accessibility</a>
-          <a href="#">Student Terms</a>
         </div>
       </div>
 
