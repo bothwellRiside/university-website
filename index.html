@@ -1,240 +1,1044 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>University Name</title>
-  <title>Liverpool University of Distance Learning | United Kingdom</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Basic SEO -->
-  <meta name="description" content="Liverpool University of Distance Learning (UK) offers flexible, internationally recognised online degree programmes.">
-  <meta name="keywords" content="Distance Learning, Online University, UK University, Higher Education">
+  <title>Liverpool University of Distance Learning | Online Higher Education</title>
+
+  <meta
+    name="description"
+    content="Liverpool University of Distance Learning offers flexible online programmes designed for ambitious learners worldwide."
+  />
 
   <style>
-    body {
+    :root {
+      --navy: #071b3a;
+      --deep-navy: #041226;
+      --red: #b5122b;
+      --gold: #c99a2e;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e1ec;
+      --soft: #f5f7fb;
+      --white: #ffffff;
+      --shadow: 0 20px 45px rgba(7, 27, 58, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #222;
+      color: var(--ink);
+      background: var(--white);
       line-height: 1.6;
     }
 
-    header {
-      background-color: #002147;
-      color: #ffffff;
-      padding: 20px 40px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .header-container {
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--deep-navy);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      padding: 9px 0;
+    }
+
+    .topbar-inner {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .crest {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--navy), var(--red));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      border: 3px solid rgba(201, 154, 46, 0.45);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #344054;
+      font-weight: 600;
+      font-size: 15px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--red);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: white;
+      padding: 11px 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 22px rgba(181, 18, 43, 0.24);
+    }
+
+    .nav-cta:hover {
+      color: white;
+      background: #941024;
     }
 
     .hero {
-      background: linear-gradient(rgba(0,33,71,0.85), rgba(0,33,71,0.85)),
-                  url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
+      min-height: 640px;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(4, 18, 38, 0.92) 0%, rgba(7, 27, 58, 0.78) 47%, rgba(7, 27, 58, 0.25) 100%),
+        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
-      color: #ffffff;
-      padding: 90px 40px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 86px 0;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffe8a3;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      letter-spacing: -1px;
     }
 
     .hero p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      font-size: 19px;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 640px;
+      margin-bottom: 32px;
     }
 
-    .hero a {
-      background-color: #c8102e;
-      color: #ffffff;
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px;
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .hero a:hover {
-      background-color: #a60d24;
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #941024;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .stats {
+      background: var(--navy);
+      color: white;
+      padding: 28px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .stat {
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      padding-left: 22px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    .stat span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
     }
 
     section {
-      padding: 60px 40px;
-      background-color: #ffffff;
+      padding: 82px 0;
     }
 
-    .section-alt {
-      background-color: #f4f6f8;
+    .section-soft {
+      background: var(--soft);
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 30px;
+    .section-heading {
+      max-width: 760px;
       margin-bottom: 40px;
-      color: #002147;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 17px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
     .card {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      padding: 30px;
-      border-radius: 6px;
-      text-align: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 6px 20px rgba(7, 27, 58, 0.04);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #fff3d1;
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 20px;
     }
 
     .card h3 {
-      color: #002147;
+      color: var(--navy);
+      font-size: 21px;
       margin-bottom: 10px;
     }
 
-    footer {
-      background-color: #002147;
-      color: #ffffff;
-      padding: 30px 40px;
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      color: var(--red);
+      font-weight: 800;
       font-size: 14px;
     }
 
-    .footer-container {
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .image-panel {
+      min-height: 460px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(rgba(7, 27, 58, 0.15), rgba(7, 27, 58, 0.15)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .feature {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .feature span {
+      color: var(--muted);
+    }
+
+    .programmes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .programme {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .programme small {
+      color: var(--red);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .programme h3 {
+      color: var(--navy);
+      margin: 10px 0 8px;
+      font-size: 19px;
+    }
+
+    .programme p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .admissions {
+      background:
+        linear-gradient(90deg, rgba(7, 27, 58, 0.94), rgba(7, 27, 58, 0.86)),
+        url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .admissions h2 {
+      color: white;
+    }
+
+    .admissions .section-heading p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .step {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .step span {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: var(--deep-navy);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 15px;
+    }
+
+    .notice {
+      background: #fff8e1;
+      border-top: 1px solid #f1d27a;
+      border-bottom: 1px solid #f1d27a;
+      padding: 18px 0;
+      color: #59420a;
+      font-size: 15px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+    }
+
+    .contact-box,
+    form {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(7, 27, 58, 0.04);
+    }
+
+    .contact-box h3,
+    form h3 {
+      color: var(--navy);
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    .contact-item {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 14px 0 6px;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--ink);
+      background: white;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      margin-top: 18px;
+      font: inherit;
+    }
+
+    footer {
+      background: var(--deep-navy);
+      color: rgba(255, 255, 255, 0.78);
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+      margin-bottom: 12px;
     }
 
     footer a {
-      color: #ffffff;
-      text-decoration: none;
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 8px;
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 940px) {
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-bottom: 14px;
+      }
+
+      .header-inner {
+        justify-content: center;
+        padding-top: 14px;
+      }
+
+      .stats-grid,
+      .cards,
+      .programmes,
+      .steps,
+      .split,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 70px 0;
+        background:
+          linear-gradient(rgba(4, 18, 38, 0.9), rgba(4, 18, 38, 0.82)),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats-grid,
+      .cards,
+      .programmes,
+      .steps,
+      .split,
+      .contact-grid,
+      .footer-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .image-panel {
+        min-height: 320px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Online learning for students worldwide</span>
+      <span>Admissions enquiries: admissions@ludl.ac.uk</span>
+    </div>
+  </div>
 
-  <h1>Welcome to University Name</h1>
-  <p>This website is under development.</p>
-  <!-- HEADER -->
   <header>
-    <div class="header-container">
-      <div class="logo">Liverpool University of Distance Learning</div>
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <div class="crest">LU</div>
+        <div>
+          <strong>Liverpool University of Distance Learning</strong>
+          <span>Flexible Online Higher Education</span>
+        </div>
+      </a>
+
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Programmes</a>
-        <a href="#">Admissions</a>
-        <a href="#">Contact</a>
+        <a href="#about">About</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#learning">Learning</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact" class="nav-cta">Apply Now</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <div class="hero">
-    <h1>Flexible, Recognised Distance Learning</h1>
-    <p>
-      Liverpool University of Distance Learning (United Kingdom) provides
-      accessible, rigorous, and internationally oriented higher education
-      through modern online delivery.
-    </p>
-    <a href="#">Explore Our Programmes</a>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">United Kingdom Based Online Education</div>
+        <h1>Earn a serious qualification without putting your life on hold.</h1>
+        <p>
+          Liverpool University of Distance Learning delivers career-focused online programmes
+          for ambitious learners who need flexibility, academic structure, and professional support.
+        </p>
 
-  <!-- WHY STUDY WITH US -->
-  <section>
-    <h2 class="section-title">Why Study With Us</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>UK Academic Standards</h3>
-        <p>
-          Our programmes are designed in line with British higher education
-          frameworks and academic rigour.
-        </p>
+        <div class="hero-actions">
+          <a href="#programmes" class="btn btn-primary">Explore Programmes</a>
+          <a href="#contact" class="btn btn-secondary">Request Information</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Fully Online Learning</h3>
-        <p>
-          Study from anywhere in the world with structured online delivery,
-          academic support, and flexible schedules.
-        </p>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Online study options</span>
+        </div>
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Digital learning access</span>
+        </div>
+        <div class="stat">
+          <strong>Global</strong>
+          <span>Student community</span>
+        </div>
+        <div class="stat">
+          <strong>Career</strong>
+          <span>Focused curriculum</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>Career-Focused Degrees</h3>
-        <p>
-          Programmes aligned with industry, research, and professional
-          development pathways.
-        </p>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div>
+          <div class="section-label">About The University</div>
+          <h2>Modern distance learning with academic seriousness.</h2>
+          <p>
+            We support learners who want a flexible route into higher education while maintaining
+            a strong commitment to academic quality, student guidance, and practical outcomes.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature">
+              <div class="check">✓</div>
+              <div>
+                <strong>Structured online learning</strong>
+                <span>Clear modules, guided assessments, and organised academic calendars.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="check">✓</div>
+              <div>
+                <strong>Dedicated student support</strong>
+                <span>Academic and administrative guidance from application to completion.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="check">✓</div>
+              <div>
+                <strong>Professional development focus</strong>
+                <span>Programmes designed around real workplace skills and long-term growth.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-panel" aria-label="Online university learning environment"></div>
+      </div>
+    </section>
+
+    <section id="programmes" class="section-soft">
+      <div class="container">
+        <div class="section-heading center">
+          <div class="section-label">Academic Programmes</div>
+          <h2>Study areas designed for modern careers.</h2>
+          <p>
+            Choose from flexible online pathways across business, technology, education,
+            health leadership, and social sciences.
+          </p>
+        </div>
+
+        <div class="programmes">
+          <div class="programme">
+            <small>Undergraduate</small>
+            <h3>Business & Management</h3>
+            <p>Leadership, enterprise, marketing, finance, and organisational strategy.</p>
+          </div>
+
+          <div class="programme">
+            <small>Undergraduate</small>
+            <h3>Computing & Technology</h3>
+            <p>Computer science, information systems, data, and digital transformation.</p>
+          </div>
+
+          <div class="programme">
+            <small>Postgraduate</small>
+            <h3>Education & Leadership</h3>
+            <p>Teaching practice, education policy, institutional leadership, and research.</p>
+          </div>
+
+          <div class="programme">
+            <small>Postgraduate</small>
+            <h3>Health & Social Care</h3>
+            <p>Healthcare management, public service, social care, and community impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="container">
+        <div class="section-heading center">
+          <div class="section-label">Why Study With Us</div>
+          <h2>A learning experience built for busy adults.</h2>
+          <p>
+            Our online model is designed to help students balance study with work, family,
+            travel, and professional commitments.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">◴</div>
+            <h3>Flexible Schedule</h3>
+            <p>
+              Access lectures, readings, tasks, and learning materials from wherever you are.
+            </p>
+            <a href="#contact" class="card-link">Ask about study options</a>
+          </div>
+
+          <div class="card">
+            <div class="icon">▣</div>
+            <h3>Clear Course Structure</h3>
+            <p>
+              Follow organised modules, assessment points, and practical learning outcomes.
+            </p>
+            <a href="#programmes" class="card-link">View programme areas</a>
+          </div>
+
+          <div class="card">
+            <div class="icon">✦</div>
+            <h3>Career Relevance</h3>
+            <p>
+              Learn knowledge and skills connected to leadership, technology, and professional growth.
+            </p>
+            <a href="#admissions" class="card-link">Start your application</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="admissions">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Admissions</div>
+          <h2>Your application journey is simple and supported.</h2>
+          <p>
+            Our admissions team reviews each application carefully and helps students understand
+            programme requirements before enrolment.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span>1</span>
+            <h3>Choose Programme</h3>
+            <p>Select the study area that matches your academic and career goals.</p>
+          </div>
+
+          <div class="step">
+            <span>2</span>
+            <h3>Submit Details</h3>
+            <p>Send your academic background, contact details, and preferred start date.</p>
+          </div>
+
+          <div class="step">
+            <span>3</span>
+            <h3>Receive Review</h3>
+            <p>Our admissions team reviews eligibility and may request additional documents.</p>
+          </div>
+
+          <div class="step">
+            <span>4</span>
+            <h3>Begin Learning</h3>
+            <p>After acceptance, access your online learning environment and student support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice">
+      <div class="container">
+        <strong>Important:</strong>
+        Replace this notice with your official registration, accreditation, awarding body,
+        and regulatory information before publishing the website publicly.
       </div>
     </div>
-  </section>
 
-  <!-- ACADEMIC AREAS -->
-  <section class="section-alt">
-    <h2 class="section-title">Academic Areas</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Business & Management</h3>
-        <p>Bachelor’s and postgraduate programmes in leadership and enterprise.</p>
-      </div>
-      <div class="card">
-        <h3>Computing & Technology</h3>
-        <p>Computer Science, Information Systems, and emerging technologies.</p>
-      </div>
-      <div class="card">
-        <h3>Education & Social Sciences</h3>
-        <p>Education, policy, and social development disciplines.</p>
-      </div>
-    </div>
-  </section>
+    <section id="contact" class="section-soft">
+      <div class="container contact-grid">
+        <div class="contact-box">
+          <h3>Contact Admissions</h3>
 
-  <!-- FOOTER -->
+          <div class="contact-item">
+            <strong>Email</strong>
+            admissions@ludl.ac.uk
+          </div>
+
+          <div class="contact-item">
+            <strong>Location</strong>
+            Liverpool, United Kingdom
+          </div>
+
+          <div class="contact-item">
+            <strong>Office Hours</strong>
+            Monday to Friday, 09:00 - 17:00 UK time
+          </div>
+
+          <p>
+            Speak with our admissions office about online study routes, entry requirements,
+            tuition information, and upcoming intake dates.
+          </p>
+        </div>
+
+        <form>
+          <h3>Request Information</h3>
+
+          <div class="form-row">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Your full name" />
+            </div>
+
+            <div>
+              <label for="email">Email Address</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="programme">Programme Interest</label>
+              <select id="programme">
+                <option>Business & Management</option>
+                <option>Computing & Technology</option>
+                <option>Education & Leadership</option>
+                <option>Health & Social Care</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="level">Study Level</label>
+              <select id="level">
+                <option>Undergraduate</option>
+                <option>Postgraduate</option>
+                <option>Professional Certificate</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us what you would like to study."></textarea>
+
+          <button type="button" class="btn btn-primary">Submit Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <div class="footer-container">
-      <div>
-        © 2025 Liverpool University of Distance Learning<br>
-        United Kingdom
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Liverpool University of Distance Learning</h3>
+          <p>
+            Flexible online higher education for students seeking structured,
+            career-focused learning.
+          </p>
+        </div>
+
+        <div>
+          <h4>University</h4>
+          <a href="#about">About</a>
+          <a href="#learning">Online Learning</a>
+          <a href="#admissions">Admissions</a>
+        </div>
+
+        <div>
+          <h4>Programmes</h4>
+          <a href="#programmes">Business</a>
+          <a href="#programmes">Computing</a>
+          <a href="#programmes">Education</a>
+        </div>
+
+        <div>
+          <h4>Policies</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Student Terms</a>
+        </div>
       </div>
-      <div>
-        <a href="#">Policies</a> | 
-        <a href="#">Privacy</a> | 
-        <a href="#">Accessibility</a>
+
+      <div class="footer-bottom">
+        <span>© 2026 Liverpool University of Distance Learning. All rights reserved.</span>
+        <span>United Kingdom</span>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
