@@ -474,11 +474,13 @@
     </div>
   </footer>
 
-  <script>
-    const portalWebAppUrl = "https://script.google.com/macros/s/AKfycbxIkqnH63In2ZWaUCdiHLcFAZRzdW9fEMx4hivQNdrY3YMyAg62tou_vBLlS4L-ifZP/exec";
-    const params = new URLSearchParams(window.location.search);
-    const student = params.get("student") || "";
-    const token = params.get("token") || "";
+ <script>
+  const portalWebAppUrl = "https://script.google.com/macros/s/AKfycbwqmj5dIiCUWGcAAvCmDfMIr2i8Ksu9OFQQ1A7jhWSAj4QHQwHx2zopD4cJWcE44KbX/exec";
+
+  const params = new URLSearchParams(window.location.search);
+  const student = params.get("student") || "";
+  const token = params.get("token") || "";
+
 
     const portalFrame = document.getElementById("portalFrame");
     const fallbackLink = document.getElementById("fallbackLink");
